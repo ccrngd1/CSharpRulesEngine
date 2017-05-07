@@ -56,8 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CSCCompilerBL.cs" />
-    <Compile Include="DynamicLoad1.cs" />
-    <Compile Include="DynamicLoad2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

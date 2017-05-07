@@ -170,11 +170,11 @@ namespace RulesEngine.DAL
             return ret;
         }
         
-        public DataTable GetEnabledRules(RuleAppliedFilter raf )
+        public List<RuleAppliedBase> GetEnabledRules(RuleAppliedFilter raf )
         {
             if(raf==null) raf = new RuleAppliedFilter();
 
-            var ret = new DataTable(); 
+            var ret = new List<RuleAppliedBase>();
 
             using (var conn = new SqlConnection(_connString))
             using (var cmd = new SqlCommand("RulesEngine.spa_GetRulesWithPreConditions", conn))
@@ -195,9 +195,31 @@ namespace RulesEngine.DAL
 
                 conn.Open();
 
-                using (var sda = new SqlDataAdapter(cmd))
+                using(var reader = cmd.ExecuteReader())
                 {
-                    sda.Fill(ret);
+                    while (reader.Read())
+                    {
+                        var subCId = reader["RuleSubCategoryId"].ToString();
+                        var applyOrder = reader["ApplyOrder"].ToString();
+                        var condCodeInputId = reader["ConditionCodeInputTypeId"].ToString();
+                        var condCodeOutputId = reader["ConditionCodeOutputTypeId"].ToString();
+                        var conditionCodeId = reader["ConditionCodeId"].ToString();
+
+                        ret.Add(new RuleAppliedBase
+                        {
+                            RuleCategoryId = int.Parse(reader["RuleCategoryId"].ToString()),
+                            RuleSubCategoryId = string.IsNullOrWhiteSpace(subCId) ? (int?)null : int.Parse(subCId),
+                            ApplyOrder = string.IsNullOrWhiteSpace(applyOrder) ? (int?)null : int.Parse(applyOrder),
+                            CodeId = int.Parse(reader["MainCodeId"].ToString()),
+                            ConditionCodeId = string.IsNullOrWhiteSpace(conditionCodeId) ? (int?)null : int.Parse(conditionCodeId),
+                            IsEnabled = bool.Parse(reader["IsEnabled"].ToString()),
+                            RuleAppliedId = int.Parse(reader["id"].ToString()),
+                            RuleCodeInTypeId = int.Parse(reader["CodeInputTypeId"].ToString()),
+                            RuleCodeOutTypeId = int.Parse(reader["CodeOutputTypeId"].ToString()),
+                            RuleCodeConditionInTypeId = string.IsNullOrWhiteSpace(condCodeInputId) ? (int?)null : int.Parse(condCodeInputId),
+                            RuleCodeConditionOutTypeId = string.IsNullOrWhiteSpace(condCodeOutputId) ? (int?)null : int.Parse(condCodeOutputId),
+                        });
+                    }
                 }
             }
 

@@ -300,7 +300,7 @@ namespace LawsonCS.Business.RulesEngine
             return ret;
         }
 
-        public DataTable RefreshRules()
+        public List<RuleAppliedBase> RefreshRules()
         {
             return _specificCompilerBL.RefreshRules();
         }

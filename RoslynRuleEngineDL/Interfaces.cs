@@ -9,7 +9,7 @@ namespace RulesEngine.DAL
     public interface ICompilerBL
     {
         //TOut RunRules<TOut, TIn>(List<RuleAppliedBase> rules, TIn input);
-        DataTable RefreshRules();
+        List<RuleAppliedBase> RefreshRules();
         CompilerResults CompileRules(List<RuleAppliedBase> rules);
         string CurrentRuleTable();
     }
@@ -19,7 +19,7 @@ namespace RulesEngine.DAL
     {
         List<RuleCategory> GetAvailableCategories();
         List<RuleCodeIOType> GetAvailabileRuleCodeTypes();
-        DataTable GetEnabledRules(RuleAppliedFilter raf);
+        List<RuleAppliedBase> GetEnabledRules(RuleAppliedFilter raf);
         Cache DALCache { get; }
         List<RuleCodeCache> GetRuleCodeMetaData(List<int> codeIds );
         void GetRuleCode(List<RuleCodeCache> rules);

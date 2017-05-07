@@ -1,7 +1,7 @@
-﻿<Application x:Class="Zirmed.WinForms.RulesEngineBasic.App"
+﻿<Application x:Class="LawsonCS.WinForms.RulesEngineBasic.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Zirmed.WinForms.RulesEngineBasic"
+             xmlns:local="clr-namespace:LawsonCS.WinForms.RulesEngineBasic"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

@@ -1,9 +1,9 @@
-﻿<local:RuleGUITabPage x:Class="Zirmed.WinForms.RulesEngineBasic.TestGUI"
+﻿<local:RuleGUITabPage x:Class="LawsonCS.WinForms.RulesEngineBasic.TestGUI"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Zirmed.WinForms.RulesEngineBasic"
+             xmlns:local="clr-namespace:LawsonCS.WinForms.RulesEngineBasic"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>

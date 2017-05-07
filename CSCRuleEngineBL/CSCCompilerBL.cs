@@ -29,12 +29,12 @@ namespace LawsonCS.Business.RulesEngine.Compiler
             RefreshRules();
         } 
 
-        public DataTable RefreshRules()
+        public List<RuleAppliedBase> RefreshRules()
         {
             return GetEnabledRules(new RuleAppliedFilter {RuleTableName = _ruleTable}); 
         }
 
-        private DataTable GetEnabledRules(RuleAppliedFilter filter)
+        private List<RuleAppliedBase> GetEnabledRules(RuleAppliedFilter filter)
         {
             return _rulesDAL.GetEnabledRules(filter);
         }

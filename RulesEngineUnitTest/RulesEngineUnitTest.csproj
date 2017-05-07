@@ -93,14 +93,6 @@
       <Project>{797d7708-598f-470c-98fc-65abbd892a9e}</Project>
       <Name>Business.RulesEngine</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Reference.RulesEngine\Reference.RulesEngine.csproj">
-      <Project>{725532b8-b120-4d3d-884a-fb7d1e46ad38}</Project>
-      <Name>Reference.RulesEngine</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Workflow.RulesEngine\LawsonCS.Workflow.RulesEngine.csproj">
-      <Project>{6c83a00b-f04a-4435-a17f-daf8ad69d987}</Project>
-      <Name>LawsonCS.Workflow.RulesEngine</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

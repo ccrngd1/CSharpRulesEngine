@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Zirmed.Claims.Reference.RulesEngine")]
+[assembly: AssemblyTitle("LawsonCS.Claims.Reference.RulesEngine")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ZirMed Inc")]
-[assembly: AssemblyProduct("Zirmed.Claims.Reference.RulesEngine")]
-[assembly: AssemblyCopyright("Copyright © ZirMed Inc 2015")]
+[assembly: AssemblyCompany("LawsonCS")]
+[assembly: AssemblyProduct("LawsonCS.Claims.Reference.RulesEngine")]
+[assembly: AssemblyCopyright("Copyright © LawsonCS 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

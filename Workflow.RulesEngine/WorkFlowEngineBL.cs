@@ -35,33 +35,8 @@ namespace LawsonCS.Claims.WorkFlowEngine.RulesEngine
 
         private void RefreshRules()
         {
-            DataTable dtbl = _rulesBL.RefreshRules();
-
             _rules = new List<RuleAppliedBase>();
-
-            foreach (DataRow row in dtbl.Rows)
-            {
-                var subCId = row["RuleSubCategoryId"].ToString();
-                var applyOrder = row["ApplyOrder"].ToString();
-                var condCodeInputId = row["ConditionCodeInputTypeId"].ToString();
-                var condCodeOutputId = row["ConditionCodeOutputTypeId"].ToString();
-                var conditionCodeId = row["ConditionCodeId"].ToString();
-
-                _rules.Add(new RuleAppliedBase
-                {
-                    RuleCategoryId = int.Parse(row["RuleCategoryId"].ToString()),
-                    RuleSubCategoryId = string.IsNullOrWhiteSpace(subCId) ? (int?)null : int.Parse(subCId),
-                    ApplyOrder = string.IsNullOrWhiteSpace(applyOrder) ? (int?)null : int.Parse(applyOrder),
-                    CodeId = int.Parse(row["MainCodeId"].ToString()),
-                    ConditionCodeId = string.IsNullOrWhiteSpace(conditionCodeId) ? (int?)null : int.Parse(conditionCodeId),
-                    IsEnabled = bool.Parse(row["IsEnabled"].ToString()),
-                    RuleAppliedId = int.Parse(row["id"].ToString()),
-                    RuleCodeInTypeId = int.Parse(row["CodeInputTypeId"].ToString()),
-                    RuleCodeOutTypeId = int.Parse(row["CodeOutputTypeId"].ToString()),
-                    RuleCodeConditionInTypeId = string.IsNullOrWhiteSpace(condCodeInputId) ? (int?)null : int.Parse(condCodeInputId),
-                    RuleCodeConditionOutTypeId = string.IsNullOrWhiteSpace(condCodeOutputId) ? (int?)null : int.Parse(condCodeOutputId),
-                });
-            }
+            _rules = _rulesBL.RefreshRules();
 
             CompilerResults results = _rulesBL.CompileRules(_rules);
 

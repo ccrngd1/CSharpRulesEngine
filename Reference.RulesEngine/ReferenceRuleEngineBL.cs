@@ -29,30 +29,8 @@ namespace LawsonCS.Claims.Reference.RulesEngine
 
         private void RefreshRules()
         {
-            var dtbl = _rulesBL.RefreshRules();
-
             _rules = new List<RuleAppliedBase>();
-
-            foreach (System.Data.DataRow row in dtbl.Rows)
-            {
-                string subCId = row["RuleSubCategoryId"].ToString();
-                string applyOrder = row["ApplyOrder"].ToString();
-
-                _rules.Add(new RuleAppliedBase
-                {
-                    RuleCategoryId = int.Parse(row["RuleCategoryId"].ToString()),
-                    RuleSubCategoryId = string.IsNullOrWhiteSpace(subCId) ? (int?) null : int.Parse(subCId),
-                    ApplyOrder = string.IsNullOrWhiteSpace(applyOrder) ? (int?) null : int.Parse(applyOrder),
-                    CodeId = int.Parse(row["MainCodeId"].ToString()),
-                    ConditionCodeId = int.Parse(row["ConditionCodeId"].ToString()),
-                    IsEnabled = bool.Parse(row["IsEnabled"].ToString()),
-                    RuleAppliedId = int.Parse(row["id"].ToString()),
-                    RuleCodeInTypeId = int.Parse(row["CodeInputTypeId"].ToString()),
-                    RuleCodeOutTypeId = int.Parse(row["CodeOutputTypeId"].ToString()),
-                    RuleCodeConditionInTypeId = int.Parse(row["ConditionCodeInputTypeId"].ToString()),
-                    RuleCodeConditionOutTypeId = int.Parse(row["ConditionCodeOutputTypeId"].ToString())
-                });
-            }
+            _rules = _rulesBL.RefreshRules();
 
             var results = _rulesBL.CompileRules(_rules);  
 

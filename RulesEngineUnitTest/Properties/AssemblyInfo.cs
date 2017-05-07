@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("RulesEngineUnitTest")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ZirMed Inc")]
+[assembly: AssemblyCompany("LawsonCS Inc")]
 [assembly: AssemblyProduct("RulesEngineUnitTest")]
-[assembly: AssemblyCopyright("Copyright © ZirMed Inc 2015")]
+[assembly: AssemblyCopyright("Copyright © LawsonCS 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
