@@ -1,0 +1,59 @@
+﻿<Window x:Class="Zirmed.WinForms.RulesEngineBasic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zirmed.WinForms.RulesEngineBasic"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="700">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/> 
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Menu Grid.Row="0" Grid.Column="0" >
+            <MenuItem Header="Options">
+                <MenuItem Header="Test" IsChecked="True" IsCheckable="True" Checked="MenuItem_OnChecked"/>
+                <MenuItem Header="Qa" IsCheckable="True" Checked="MenuItem_OnChecked"/>
+                <MenuItem Header="Prod" IsCheckable="True" Checked="MenuItem_OnChecked"/>
+            </MenuItem>
+            <MenuItem Header="Tools">
+                <MenuItem Header="Refresh" Checked="MenuItem_Refresh_OnChecked"/>
+            </MenuItem>
+        </Menu>
+
+        <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1" >
+            <TabItem Header="Basic Rules Editor">
+                <local:BasicGUI CurrentEnvironmentEnum="{Binding RelativeSource={RelativeSource AncestorType=local:MainWindow} , Path=GlobalCurrentEnvironmentEnum, Mode=OneWay }" />
+            </TabItem>
+            <TabItem Header="Misc Test Harness">
+                <local:MiscTestHarness CurrentEnvironmentEnum="{Binding RelativeSource={RelativeSource AncestorType=local:MainWindow} , Path=GlobalCurrentEnvironmentEnum, Mode=OneWay }" />
+            </TabItem>
+            <TabItem Header="Test Rules Editor">
+                <local:TestGUI CurrentEnvironmentEnum="{Binding RelativeSource={RelativeSource AncestorType=local:MainWindow} , Path=GlobalCurrentEnvironmentEnum, Mode=OneWay }" />
+            </TabItem>
+        </TabControl>
+        
+        <StatusBar Grid.Row="2" Grid.Column="0">
+            <StatusBarItem>
+                <TextBlock>Environment:</TextBlock>
+            </StatusBarItem>
+            <StatusBarItem Width="50">
+                <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=local:MainWindow} , Path=GlobalCurrentEnvironmentEnum, Mode=TwoWay }"/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock>Messages:</TextBlock>
+            </StatusBarItem>
+            <!--<StatusBarItem>
+                <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=local:MainWindow} , Path=LastErrorMessage, Mode=TwoWay }"/>
+            </StatusBarItem>-->
+        </StatusBar>
+        
+    </Grid>
+    
+</Window>

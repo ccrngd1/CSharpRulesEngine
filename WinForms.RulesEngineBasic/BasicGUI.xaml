@@ -1,0 +1,147 @@
+﻿<local:RuleGUITabPage x:Class="Zirmed.WinForms.RulesEngineBasic.BasicGUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Zirmed.WinForms.RulesEngineBasic"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions> 
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/> 
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="Rule Table" />
+            <!--<TextBox Grid.Row="1" Grid.Column="0" Margin="10,0,10,0" 
+                     Name="RuleTableTB"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=RuleTable, Mode=TwoWay}" 
+                     IsEnabled="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=RuleTableTBEnabled, Mode=TwoWay}"/>-->
+            <ComboBox Grid.Row="1" Grid.Column="0" Margin="10,0,10,0"  
+                      Name="RuleTableCB"
+                      ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=RuleAppliedTables, Mode=OneWay }"
+                      IsEnabled="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=RuleCategoryCBEnabled, Mode=TwoWay}"
+                        SelectionChanged="RuleTableCB_OnSelectionChanged"
+                      />
+
+            <Label Grid.Row="0" Grid.Column="1" Content="Rule Applied Id" />
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="10,0,10,0"  
+                     Name="RuleAppliedIdTB"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=RuleAppliedId, Mode=TwoWay }"
+                     IsEnabled="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=RuleAppliedIdTBEnabled, Mode=TwoWay}"/>
+            
+            <Button Grid.Row="1" Grid.Column="2" Content="Get" Margin="10,0,10,0" 
+                    Name="GetButton"
+                    Click="GetButton_OnClick"
+                    IsEnabled="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=GetButtonEnabled, Mode=TwoWay}"/>
+            
+            <Button Grid.Row="1" Grid.Column="3" Content="Clear" Margin="10,0,10,0" 
+                    Name="ClearButton"
+                    Click="ClearButton_OnClick"/>
+
+            <Label Grid.Row="3" Grid.Column="0" Content="Rule Category" />
+            <ComboBox Grid.Row="4" Grid.Column="0" Margin="10,0,10,0" 
+                      Name="RuleCategoryCB"
+                      ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=RulesDAL.DALCache.RuleCategories, Mode=OneWay }"
+                      IsEnabled="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=RuleCategoryCBEnabled, Mode=TwoWay}"/>
+
+            <Label Grid.Row="3" Grid.Column="1" Content="Rule Sub-Category"/>
+            <ComboBox Grid.Row="4" Grid.Column="1" Margin="10,0,10,0" 
+                      Name="RuleSubCategoryCB"
+                      ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=RulesDAL.DALCache.RuleCategories, Mode=OneWay }"
+                      IsEnabled="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=RuleSubCategoryCBEnabled, Mode=TwoWay}"/>
+
+            <Button Grid.Row="4" Grid.Column="2" Content="Save" Margin="10,0,10,0" 
+                    Name="SaveButton"
+                    Click="SaveButton_OnClick"
+                    IsEnabled="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=SaveButtonEnabled, Mode=OneWay }"/>
+            
+            <Button Grid.Row="4" Grid.Column="3" Content="Promote" Margin="10,0,10,0" 
+                    Name="PromoteButton"
+                    Click="PromoteButton_OnClick"
+                    IsEnabled="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=PromoteButtonEnabled, Mode=OneWay }"/>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>  <!--0 label-->
+                <RowDefinition Height="*"/>     <!--1 tb-->
+                <RowDefinition Height="*"/>     <!--2 tb-->
+                <RowDefinition Height="Auto"/>  <!--3 spacer-->
+                <RowDefinition Height="Auto"/>  <!--4 label-->
+                <RowDefinition Height="*"/>     <!--5 tb--> 
+                <RowDefinition Height="*"/>     <!--6 tb-->
+                <RowDefinition Height="10"/>    <!--7 spacer-->
+            </Grid.RowDefinitions>
+            
+            <Label Grid.Row="0" Grid.Column="0" Content="Input Type"/>
+            <ListBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" 
+                     Name="RuleInputTypesLB"
+                     ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=RulesDAL.DALCache.RuleCodeIOTypes, Mode=OneWay }"
+                     IsEnabled="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=RuleInputTypesLBEnabled, Mode=OneWay }"/>
+            
+            <Label Grid.Row="0" Grid.Column="2" Content="Condition Code"/>
+            <TextBox Grid.Row="1" Grid.Column="2" VerticalScrollBarVisibility="Visible"
+                     Name="ConditionCodeTB"
+                     Text= "{Binding  RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=CodeConditionText}"
+                     IsEnabled="{Binding  RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=ConditionTextEnabled}"/>
+
+            <Label Grid.Row="4" Grid.Column="0" Content="OutputType"/>
+            <ListBox Grid.Row="5" Grid.Column="0" Grid.RowSpan="2" 
+                     Name="RuleOutputTypeLB"
+                     ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=RulesDAL.DALCache.RuleCodeIOTypes, Mode=OneWay }"
+                     IsEnabled="{Binding RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=RuleOutputTypesLBEnabled, Mode=OneWay }"/>
+                
+            <Label Grid.Row="4" Grid.Column="2" Content="Rule Code"/>
+            <TextBox Grid.Row="5" Grid.Column="2" Grid.RowSpan="2" VerticalScrollBarVisibility="Visible"
+                     
+                     Name="CodeTextTB"
+                     Text= "{Binding  RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=CodeText}"
+                     IsEnabled="{Binding  RelativeSource={RelativeSource AncestorType=local:BasicGUI}, Path=CodeTextEnabled}" TextWrapping="Wrap"/>
+
+            <Label Grid.Row="0" Grid.Column="4" Content="Trainig Docs"/>
+            <DataGrid Grid.Row="1" Grid.Column="4" Grid.RowSpan="6"/>
+            
+        </Grid>
+        
+        <StatusBar Grid.Row="2" Grid.Column="0">
+            <StatusBarItem>
+                <TextBlock Text="Compiler Status:  "/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock Text="unk"></TextBlock>
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right">
+                <Button Content="Verify DB" Click="VerifyButton_OnClick"/>
+            </StatusBarItem>
+        </StatusBar>
+
+    </Grid>
+</local:RuleGUITabPage>

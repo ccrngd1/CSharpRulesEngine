@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C56FDD84-AC24-4D14-98F5-3594F01EDCD5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RoslynRuleEngineConsole</RootNamespace>
+    <AssemblyName>RoslynRuleEngineConsole</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr4.Runtime">
+      <HintPath>..\..\..\..\..\..\..\..\..\Users\NICK.LAWSON\Downloads\Antlr4.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZirMed.Architecture.Utilities.CommandLine">
+      <HintPath>..\..\..\..\..\ZirMedSharedDLL\Architecture\Utilities\CommandLine\ZirMed.Architecture.Utilities.CommandLine.dll</HintPath>
+    </Reference>
+    <Reference Include="ZirMed.Claims.Objects.Transactions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ZirMed.Claims.Objects.Transactions.dll</HintPath>
+    </Reference>
+    <Reference Include="ZirMed.Claims.Utilities.General, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ZirMed.Claims.Utilities.General.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConsoleDAL.cs" />
+    <Compile Include="ConsoleObjects.cs" />
+    <Compile Include="OldProgram.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="xpath1w3\XPath1W3BaseListener.cs" />
+    <Compile Include="xpath1w3\XPath1W3BaseVisitor.cs" />
+    <Compile Include="xpath1w3\XPath1W3Lexer.cs" />
+    <Compile Include="xpath1w3\XPath1W3Listener.cs" />
+    <Compile Include="xpath1w3\XPath1W3Parser.cs" />
+    <Compile Include="xpath1w3\XPath1W3VisistorLinkedList.cs" />
+    <Compile Include="xpath1w3\XPath1W3Visitor.cs" />
+    <Compile Include="xpath1w3\XPath1W3Visitor1.cs" />
+    <Compile Include="xpath1\XPath1BaseListener.cs" />
+    <Compile Include="xpath1\XPath1BaseVisitor.cs" />
+    <Compile Include="xpath1\XPath1Lexer.cs" />
+    <Compile Include="xpath1\XPath1Listener.cs" />
+    <Compile Include="xpath1\XPath1Parser.cs" />
+    <Compile Include="xpath1\XPath1Visitor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="xpath1w3\XPath1W3.g4" />
+    <None Include="xpath1w3\XPath1W3.tokens" />
+    <None Include="xpath1w3\XPath1W3Lexer.tokens" />
+    <None Include="xpath1\XPath1.g4" />
+    <None Include="xpath1\XPath1.tokens" />
+    <None Include="xpath1\XPath1Lexer.tokens" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RoslynRuleEngineBL\RoslynRuleEngineBL.csproj">
+      <Project>{d0b842b0-a624-46f6-80cf-f965f5fb3e1b}</Project>
+      <Name>RoslynRuleEngineBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoslynRuleEngineDL\Zirmed.RulesEngine.Data.csproj">
+      <Project>{7f016254-6dac-4f23-8845-1279a25f1faa}</Project>
+      <Name>Zirmed.RulesEngine.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zirmed.Claims.Reference.RulesEngine\Zirmed.Claims.Reference.RulesEngine.csproj">
+      <Project>{725532b8-b120-4d3d-884a-fb7d1e46ad38}</Project>
+      <Name>Zirmed.Claims.Reference.RulesEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zirmed.Claims.Validator.RulesEngine\Zirmed.Claims.Validator.RulesEngine.csproj">
+      <Project>{21b6d127-a688-4a3f-83ab-580291cccc85}</Project>
+      <Name>Zirmed.Claims.Validator.RulesEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zirmed.Claims.Workflow.RulesEngine\Zirmed.Claims.Workflow.RulesEngine.csproj">
+      <Project>{6c83a00b-f04a-4435-a17f-daf8ad69d987}</Project>
+      <Name>Zirmed.Claims.Workflow.RulesEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

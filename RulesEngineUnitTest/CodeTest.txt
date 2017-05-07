@@ -1,0 +1,10 @@
+﻿namespace RulesEngine
+{
+    public static class TestRules
+    {
+        public static string TestRules0(string inClm)
+        {
+            return "";
+        }
+    }
+}
