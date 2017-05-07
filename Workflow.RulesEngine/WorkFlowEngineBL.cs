@@ -8,7 +8,7 @@ using RulesEngine.DAL;
 using LawsonCS.Business.RulesEngine;
 using LawsonCS.RulesEngine.Data;
 
-namespace LawsonCS.Claims.WorkFlowEngine.RulesEngine
+namespace LawsonCS.WorkFlowEngine.RulesEngine
 {
     public interface WorkflowState { }
 

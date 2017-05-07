@@ -6,7 +6,7 @@ using RulesEngine.DAL;
 using LawsonCS.Business.RulesEngine;
 using LawsonCS.RulesEngine.Data;
 
-namespace LawsonCS.Claims.Reference.RulesEngine
+namespace LawsonCS.Reference.RulesEngine
 {
     public class ReferenceRuleEngineBL<Tin, Tout>
     {
