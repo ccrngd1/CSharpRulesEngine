@@ -1,7 +1,6 @@
 ﻿using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Data;
-using RulesEngine.DAL;
 using LawsonCS.RulesEngine.Data;
 
 namespace RulesEngine.DAL
@@ -23,7 +22,7 @@ namespace RulesEngine.DAL
         Cache DALCache { get; }
         List<RuleCodeCache> GetRuleCodeMetaData(List<int> codeIds );
         void GetRuleCode(List<RuleCodeCache> rules);
-        DataTable GetRuleApplied(RuleAppliedFilter raf);
+        RuleAppliedBase GetRuleApplied(RuleAppliedFilter raf);
         List<string> GetRuleppliedTables();
     }
 }

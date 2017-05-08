@@ -5,17 +5,19 @@ VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RulesEngine.Data", "RoslynRuleEngineDL\RulesEngine.Data.csproj", "{7F016254-6DAC-4F23-8845-1279A25F1FAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RulesEngineUnitTest", "RulesEngineUnitTest\RulesEngineUnitTest.csproj", "{3EFB530A-3EF9-41D7-97D9-743906F0A434}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.UnitTest", "RulesEngineUnitTest\Testing.UnitTest.csproj", "{3EFB530A-3EF9-41D7-97D9-743906F0A434}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.RulesEngine.Compiler.CSCCompilerBL", "CSCRuleEngineBL\Business.RulesEngine.Compiler.CSCCompilerBL.csproj", "{242C3D9F-4634-47B5-8329-50E3DB0387E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RulesEngine.Business.CSC", "CSCRuleEngineBL\RulesEngine.Business.CSC.csproj", "{242C3D9F-4634-47B5-8329-50E3DB0387E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.Workflow.RulesEngine", "Workflow.RulesEngine\Testing.Workflow.RulesEngine.csproj", "{6C83A00B-F04A-4435-A17F-DAF8AD69D987}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples.RulesEngine", "Reference.RulesEngine\Examples.RulesEngine.csproj", "{725532B8-B120-4D3D-884A-FB7D1E46AD38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.Reference.RulesEngine", "Reference.RulesEngine\Testing.Reference.RulesEngine.csproj", "{725532B8-B120-4D3D-884A-FB7D1E46AD38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RulesEngine.Business", "Business.RulesEngine\RulesEngine.Business.csproj", "{797D7708-598F-470C-98FC-65ABBD892A9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.RulesEngine", "Business.RulesEngine\Business.RulesEngine.csproj", "{797D7708-598F-470C-98FC-65ABBD892A9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI.RulesEngine", "WinForms.RulesEngineBasic\GUI.RulesEngine.csproj", "{FAF4BC78-8490-4688-A5CD-0D115C147674}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms.RulesEngine", "WinForms.RulesEngineBasic\WinForms.RulesEngine.csproj", "{FAF4BC78-8490-4688-A5CD-0D115C147674}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RulesEngine.Data.SQL", "Data.SQL\RulesEngine.Data.SQL\RulesEngine.Data.SQL.csproj", "{E8C5BA5A-7926-4FDB-95C5-DD5C6678D407}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.IntegrationTesting", "Testing\IntegrationTesting\Testing.IntegrationTesting.csproj", "{9A26EB81-7FA2-46CB-A581-A29DCB9C0946}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +37,6 @@ Global
 		{242C3D9F-4634-47B5-8329-50E3DB0387E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{242C3D9F-4634-47B5-8329-50E3DB0387E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{242C3D9F-4634-47B5-8329-50E3DB0387E0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C83A00B-F04A-4435-A17F-DAF8AD69D987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C83A00B-F04A-4435-A17F-DAF8AD69D987}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C83A00B-F04A-4435-A17F-DAF8AD69D987}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C83A00B-F04A-4435-A17F-DAF8AD69D987}.Release|Any CPU.Build.0 = Release|Any CPU
 		{725532B8-B120-4D3D-884A-FB7D1E46AD38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{725532B8-B120-4D3D-884A-FB7D1E46AD38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{725532B8-B120-4D3D-884A-FB7D1E46AD38}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +49,14 @@ Global
 		{FAF4BC78-8490-4688-A5CD-0D115C147674}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAF4BC78-8490-4688-A5CD-0D115C147674}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAF4BC78-8490-4688-A5CD-0D115C147674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8C5BA5A-7926-4FDB-95C5-DD5C6678D407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8C5BA5A-7926-4FDB-95C5-DD5C6678D407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8C5BA5A-7926-4FDB-95C5-DD5C6678D407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8C5BA5A-7926-4FDB-95C5-DD5C6678D407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A26EB81-7FA2-46CB-A581-A29DCB9C0946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A26EB81-7FA2-46CB-A581-A29DCB9C0946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A26EB81-7FA2-46CB-A581-A29DCB9C0946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A26EB81-7FA2-46CB-A581-A29DCB9C0946}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -81,25 +81,17 @@
     <Compile Include="UnitTestCommon.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CSCRuleEngineBL\Business.RulesEngine.Compiler.CSCCompilerBL.csproj">
-      <Project>{242c3d9f-4634-47b5-8329-50e3db0387e0}</Project>
-      <Name>Business.RulesEngine.Compiler.CSCCompilerBL</Name>
+    <ProjectReference Include="..\Business.RulesEngine\RulesEngine.Business.csproj">
+      <Project>{797d7708-598f-470c-98fc-65abbd892a9e}</Project>
+      <Name>RulesEngine.Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Reference.RulesEngine\Testing.Reference.RulesEngine.csproj">
-      <Project>{725532b8-b120-4d3d-884a-fb7d1e46ad38}</Project>
-      <Name>Testing.Reference.RulesEngine</Name>
+    <ProjectReference Include="..\CSCRuleEngineBL\RulesEngine.Business.CSC.csproj">
+      <Project>{34f77924-5597-473b-9fe2-26addebc5daa}</Project>
+      <Name>RulesEngine.Business.CSC</Name>
     </ProjectReference>
     <ProjectReference Include="..\RoslynRuleEngineDL\RulesEngine.Data.csproj">
       <Project>{7f016254-6dac-4f23-8845-1279a25f1faa}</Project>
       <Name>RulesEngine.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Business.RulesEngine\Business.RulesEngine.csproj">
-      <Project>{797d7708-598f-470c-98fc-65abbd892a9e}</Project>
-      <Name>Business.RulesEngine</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Workflow.RulesEngine\Testing.Workflow.RulesEngine.csproj">
-      <Project>{6c83a00b-f04a-4435-a17f-daf8ad69d987}</Project>
-      <Name>Testing.Workflow.RulesEngine</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

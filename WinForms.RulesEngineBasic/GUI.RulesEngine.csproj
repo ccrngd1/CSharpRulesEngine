@@ -117,29 +117,29 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CSCRuleEngineBL\Business.RulesEngine.Compiler.CSCCompilerBL.csproj">
+    <ProjectReference Include="..\CSCRuleEngineBL\RulesEngine.Business.CSC.csproj">
       <Project>{242c3d9f-4634-47b5-8329-50e3db0387e0}</Project>
-      <Name>Business.RulesEngine.Compiler.CSCCompilerBL</Name>
+      <Name>RulesEngine.Business.CSC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data.SQL\RulesEngine.Data.SQL\RulesEngine.Data.SQL.csproj">
+      <Project>{e8c5ba5a-7926-4fdb-95c5-dd5c6678d407}</Project>
+      <Name>RulesEngine.Data.SQL</Name>
     </ProjectReference>
     <ProjectReference Include="..\RoslynRuleEngineDL\RulesEngine.Data.csproj">
       <Project>{7f016254-6dac-4f23-8845-1279a25f1faa}</Project>
       <Name>RulesEngine.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RulesEngineUnitTest\RulesEngineUnitTest.csproj">
+    <ProjectReference Include="..\RulesEngineUnitTest\Testing.UnitTest.csproj">
       <Project>{3efb530a-3ef9-41d7-97d9-743906f0a434}</Project>
-      <Name>RulesEngineUnitTest</Name>
+      <Name>Testing.UnitTest</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Business.RulesEngine\Business.RulesEngine.csproj">
+    <ProjectReference Include="..\Business.RulesEngine\RulesEngine.Business.csproj">
       <Project>{797d7708-598f-470c-98fc-65abbd892a9e}</Project>
-      <Name>Business.RulesEngine</Name>
+      <Name>RulesEngine.Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Reference.RulesEngine\Testing.Reference.RulesEngine.csproj">
+    <ProjectReference Include="..\Reference.RulesEngine\Examples.RulesEngine.csproj">
       <Project>{725532b8-b120-4d3d-884a-fb7d1e46ad38}</Project>
-      <Name>Testing.Reference.RulesEngine</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Workflow.RulesEngine\Testing.Workflow.RulesEngine.csproj">
-      <Project>{6c83a00b-f04a-4435-a17f-daf8ad69d987}</Project>
-      <Name>Testing.Workflow.RulesEngine</Name>
+      <Name>Examples.RulesEngine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

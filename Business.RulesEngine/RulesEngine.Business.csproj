@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{725532B8-B120-4D3D-884A-FB7D1E46AD38}</ProjectGuid>
+    <ProjectGuid>{797D7708-598F-470C-98FC-65ABBD892A9E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Reference.RulesEngine</RootNamespace>
-    <AssemblyName>Reference.RulesEngine</AssemblyName>
+    <RootNamespace>Business.RulesEngine</RootNamespace>
+    <AssemblyName>Business.RulesEngine</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,22 +44,19 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="ZirMed.Claims.Objects.Transactions">
-      <HintPath>..\..\ZirMed.Claims.Objects.Transactions.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ReferenceRuleEngineBL.cs" />
+    <Compile Include="BaseRuleEngineBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CSCRuleEngineBL\RulesEngine.Business.CSC.csproj">
+      <Project>{242c3d9f-4634-47b5-8329-50e3db0387e0}</Project>
+      <Name>RulesEngine.Business.CSC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RoslynRuleEngineDL\RulesEngine.Data.csproj">
       <Project>{7f016254-6dac-4f23-8845-1279a25f1faa}</Project>
       <Name>RulesEngine.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Business.RulesEngine\Business.RulesEngine.csproj">
-      <Project>{797d7708-598f-470c-98fc-65abbd892a9e}</Project>
-      <Name>Business.RulesEngine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

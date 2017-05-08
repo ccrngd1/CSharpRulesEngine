@@ -56,41 +56,7 @@ namespace LawsonCS.Business.RulesEngine
                     RuleTableName = ruleTable,
                 };
 
-                DataTable dt = _dal.GetRuleApplied(raf);
-
-                if (dt == null) return null;
-
-                foreach (DataRow row in dt.Rows)
-                {
-                    try
-                    {
-                        var subCId = row["RuleSubCategoryId"].ToString();
-                        var applyOrder = row["ApplyOrder"].ToString();
-                        var condCodeId = row["ConditionCodeId"].ToString();
-                        var condCodeInputId = row["ConditionCodeInputTypeId"].ToString();
-                        var condCodeOutputId = row["ConditionCodeOutputTypeId"].ToString();
-
-                        ret = new RuleAppliedBase
-                        {
-                            RuleCategoryId = int.Parse(row["RuleCategoryId"].ToString()),
-                            RuleSubCategoryId = string.IsNullOrWhiteSpace(subCId) ? (int?) null : int.Parse(subCId),
-                            ApplyOrder = string.IsNullOrWhiteSpace(applyOrder) ? (int?) null : int.Parse(applyOrder),
-                            CodeId = int.Parse(row["MainCodeId"].ToString()),
-                            ConditionCodeId = string.IsNullOrWhiteSpace(condCodeId)?(int?)null : int.Parse(condCodeId),
-                            IsEnabled = bool.Parse(row["IsEnabled"].ToString()),
-                            RuleAppliedId = int.Parse(row["id"].ToString()),
-                            RuleCodeInTypeId = int.Parse(row["CodeInputTypeId"].ToString()),
-                            RuleCodeOutTypeId = int.Parse(row["CodeOutputTypeId"].ToString()),
-                            RuleCodeConditionInTypeId = string.IsNullOrWhiteSpace(condCodeInputId)?(int?)null : int.Parse(condCodeInputId),
-                            RuleCodeConditionOutTypeId = string.IsNullOrWhiteSpace(condCodeOutputId)?(int?)null : int.Parse(condCodeOutputId)
-                        };
-                    }
-                    catch (Exception innerE)
-                    {
-                        Console.WriteLine(innerE);
-                        throw;
-                    }
-                }
+                return _dal.GetRuleApplied(raf);
             }
             catch (Exception ex)
             {
